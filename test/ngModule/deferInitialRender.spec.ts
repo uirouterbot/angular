@@ -1,15 +1,7 @@
-import { async, inject, TestBed } from '@angular/core/testing';
-import { UIRouterModule } from '../../src/uiRouterNgModule';
-import { UIView } from '../../src/directives/uiView';
+import { inject, TestBed } from '@angular/core/testing';
+import { Ng2StateDeclaration, UIRouterModule } from '../../src';
 import { memoryLocationPlugin, UIRouter } from '@uirouter/core';
-import {
-  ApplicationInitStatus,
-  Component,
-  NgModule,
-  NgModuleFactoryLoader,
-  SystemJsNgModuleLoader,
-} from '@angular/core';
-import { Ng2StateDeclaration } from '../../src/interface';
+import { ApplicationInitStatus, Component, NgModuleFactoryLoader, SystemJsNgModuleLoader } from '@angular/core';
 
 const timeout = (delay?: number) => new Promise(resolve => setTimeout(resolve, delay));
 const configFn = (router: UIRouter) => router.plugin(memoryLocationPlugin);

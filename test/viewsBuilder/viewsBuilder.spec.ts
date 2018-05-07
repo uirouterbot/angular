@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { ng2ViewsBuilder } from '../../src/statebuilders/views';
-import { StateObject, StateRegistry, UIRouter } from '@uirouter/core';
+import { ng2ViewsBuilder } from '../../src';
+import { StateObject, UIRouter } from '@uirouter/core';
 
 describe('views statebuilder', () => {
   let router: UIRouter;
   let root: StateObject;
+
   @Component({ template: '<h1>foo</h1>' })
   class Cmp {}
+
   @Component({ template: '<h1>foo2</h1>' })
   class Cmp2 {}
 

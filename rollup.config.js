@@ -6,8 +6,7 @@ import commonjs from 'rollup-plugin-commonjs';
 let MINIFY = process.env.MINIFY;
 
 let pkg = require('./package.json');
-let banner =
-`/**
+let banner = `/**
  * ${pkg.description}
  * @version v${pkg.version}
  * @link ${pkg.homepage}
@@ -16,20 +15,15 @@ let banner =
 
 let uglifyOpts = { output: {} };
 // retain multiline comment with @license
-uglifyOpts.output.comments = (node, comment) =>
-comment.type === 'comment2' && /@license/i.test(comment.value);
+uglifyOpts.output.comments = (node, comment) => comment.type === 'comment2' && /@license/i.test(comment.value);
 
-let plugins = [
-  nodeResolve({ jsnext: true }),
-  sourcemaps(),
-  commonjs(),
-];
+let plugins = [nodeResolve({ jsnext: true }), sourcemaps(), commonjs()];
 
 if (MINIFY) plugins.push(uglify(uglifyOpts));
 
 let extension = MINIFY ? '.min.js' : '.js';
 
-const onwarn = (warning) => {
+const onwarn = warning => {
   // Suppress this error message... https://github.com/rollup/rollup/wiki/Troubleshooting#this-is-undefined
   const ignores = ['THIS_IS_UNDEFINED'];
   if (!ignores.some(code => code === warning.code)) {
@@ -61,37 +55,7 @@ const CONFIG = {
     exports: 'named',
     banner: banner,
     globals: {
-      'tslib': 'tslib',
-      'rxjs/ReplaySubject': 'Rx',
-
-      // Copied these from @angular/router rollup config
-      'rxjs/BehaviorSubject': 'Rx',
-      'rxjs/Observable': 'Rx',
-      'rxjs/Subject': 'Rx',
-      'rxjs/Subscription': 'Rx',
-      'rxjs/util/EmptyError': 'Rx',
-
-      'rxjs/observable/combineLatest': 'Rx.Observable',
-      'rxjs/observable/forkJoin': 'Rx.Observable',
-      'rxjs/observable/from': 'Rx.Observable',
-      'rxjs/observable/fromPromise': 'Rx.Observable',
-      'rxjs/observable/of': 'Rx.Observable',
-
-      'rxjs/operator/catch': 'Rx.Observable.prototype',
-      'rxjs/operator/concat': 'Rx.Observable.prototype',
-      'rxjs/operator/concatAll': 'Rx.Observable.prototype',
-      'rxjs/operator/concatMap': 'Rx.Observable.prototype',
-      'rxjs/operator/every': 'Rx.Observable.prototype',
-      'rxjs/operator/filter': 'Rx.Observable.prototype',
-      'rxjs/operator/first': 'Rx.Observable.prototype',
-      'rxjs/operator/last': 'Rx.Observable.prototype',
-      'rxjs/operator/map': 'Rx.Observable.prototype',
-      'rxjs/operator/mergeAll': 'Rx.Observable.prototype',
-      'rxjs/operator/mergeMap': 'Rx.Observable.prototype',
-      'rxjs/operator/reduce': 'Rx.Observable.prototype',
-      'rxjs/operator/switchMap': 'Rx.Observable.prototype',
-      'rxjs/operator/toPromise': 'Rx.Observable.prototype',
-
+      tslib: 'tslib',
       '@uirouter/core': '@uirouter/core',
       '@uirouter/rx': '@uirouter/rx',
       'ui-router-rx': 'ui-router-rx',

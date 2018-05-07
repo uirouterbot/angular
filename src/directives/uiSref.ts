@@ -11,10 +11,11 @@ import {
   OnChanges,
   SimpleChanges,
   HostListener,
+  OnDestroy,
+  OnInit,
 } from '@angular/core';
 import { UIView, ParentUIViewInject } from './uiView';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-import { Subscription } from 'rxjs/Subscription';
+import { ReplaySubject, Subscription } from 'rxjs';
 
 /**
  * @internalapi
@@ -80,7 +81,7 @@ export class AnchorUISref {
   selector: '[uiSref]',
   exportAs: 'uiSref',
 })
-export class UISref implements OnChanges {
+export class UISref implements OnInit, OnChanges, OnDestroy {
   /**
    * `@Input('uiSref')` The name of the state to link to
    *

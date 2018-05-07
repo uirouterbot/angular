@@ -1,7 +1,6 @@
-import { StatesModule, UIRouterModule } from '../../../src/uiRouterNgModule';
+import { Ng2StateDeclaration, StatesModule, UIRouterModule } from '../../../src';
 import { Component, Injector, NgModule } from '@angular/core';
 import { UIRouter } from '@uirouter/core';
-import { Ng2StateDeclaration } from '../../../src/interface';
 
 @Component({
   selector: 'component1',

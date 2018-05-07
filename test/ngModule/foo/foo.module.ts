@@ -1,4 +1,4 @@
-import { UIRouterModule } from '../../../src/uiRouterNgModule';
+import { UIRouterModule } from '../../../src';
 import { Component, NgModule } from '@angular/core';
 
 @Component({ selector: 'foo', template: 'FOO' })

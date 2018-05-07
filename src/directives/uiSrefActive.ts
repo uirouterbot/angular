@@ -1,7 +1,7 @@
 /** @ng2api @module directives */ /** */
-import { Directive, Input, ElementRef, Host, Renderer } from '@angular/core';
+import { Directive, Input, ElementRef, Host, Renderer, OnDestroy } from '@angular/core';
 import { UISrefStatus, SrefStatus } from './uiSrefStatus';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 /**
  * A directive that adds a CSS class when its associated `uiSref` link is active.
@@ -84,7 +84,7 @@ import { Subscription } from 'rxjs/Subscription';
 @Directive({
   selector: '[uiSrefActive],[uiSrefActiveEq]',
 })
-export class UISrefActive {
+export class UISrefActive implements OnDestroy {
   private _classes: string[] = [];
   @Input('uiSrefActive')
   set active(val: string) {

@@ -1,12 +1,10 @@
-import { Component, DebugElement, ViewChildren, QueryList } from '@angular/core';
+import { Component, DebugElement, QueryList, ViewChildren } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { UIRouterModule } from '../../src/uiRouterNgModule';
-import { UISref } from '../../src/directives/uiSref';
-import { UIRouter, TargetState, TransitionOptions, StateService } from '@uirouter/core';
-import { Subject } from 'rxjs/Subject';
-import { Subscription } from 'rxjs/Subscription';
+import { UIRouterModule, UISref } from '../../src';
+import { StateService, TargetState, TransitionOptions, UIRouter } from '@uirouter/core';
+import { Subject, Subscription } from 'rxjs';
 import { clickOnElement } from '../testUtils';
 
 describe('uiSref', () => {
@@ -79,26 +77,24 @@ describe('uiSref', () => {
       let uiRouterMock: UIRouter;
       let fixture: ComponentFixture<TestComponent>;
 
-      beforeEach(
-        async(() => {
-          uiRouterMock = {
-            globals: {
-              states$: new Subject(),
+      beforeEach(async(() => {
+        uiRouterMock = {
+          globals: {
+            states$: new Subject(),
+          },
+          stateService: jasmine.createSpyObj('stateService', ['go', 'target', 'href']),
+        } as any;
+        TestBed.configureTestingModule({
+          declarations: [TestComponent],
+          imports: [UIRouterModule.forRoot({ useHash: true })],
+        })
+          .overrideComponent(TestComponent, {
+            set: {
+              providers: [{ provide: UIRouter, useValue: uiRouterMock }],
             },
-            stateService: jasmine.createSpyObj('stateService', ['go', 'target', 'href']),
-          } as any;
-          TestBed.configureTestingModule({
-            declarations: [TestComponent],
-            imports: [UIRouterModule.forRoot({ useHash: true })],
           })
-            .overrideComponent(TestComponent, {
-              set: {
-                providers: [{ provide: UIRouter, useValue: uiRouterMock }],
-              },
-            })
-            .compileComponents();
-        }),
-      );
+          .compileComponents();
+      }));
 
       beforeEach(() => {
         fixture = TestBed.createComponent(TestComponent);
