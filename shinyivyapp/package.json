@@ -2,6 +2,7 @@
   "name": "shinyivyapp",
   "version": "0.0.0",
   "scripts": {
+    "develop": "cd .. && npm run build && cd shinyivyapp && rm -rf node_modules/@uirouter && yarn --check-files && npm run start",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
