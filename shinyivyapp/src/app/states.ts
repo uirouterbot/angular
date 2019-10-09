@@ -13,4 +13,10 @@ const component2State = {
   component: Component2Component,
 };
 
-export const states = [component1State, component2State];
+const lazyFutureStates = {
+  name: 'lazy.**',
+  url: '/lazy',
+  loadChildren: () => import('./lazy/lazy.module').then(result => result.LazyModule),
+};
+
+export const states = [component1State, component2State, lazyFutureStates];
