@@ -122,6 +122,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/jasmine@^3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.4.2.tgz#49f672de24043b3c1fb919901fd3cd36f027bc93"
+  integrity sha512-SaSSGOzwUnBEn64c+HTyVTJhRf8F1CXZLnxYx2ww3UrgGBmEEw38RSux2l3fYiT9brVLP67DU5omWA6V9OHI5Q==
+
 "@types/jquery@^3.3.29":
   version "3.3.31"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.31.tgz#27c706e4bf488474e1cb54a71d8303f37c93451b"
@@ -154,13 +159,16 @@
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
 
-"@uirouter/publish-scripts@^2.3.37":
-  version "2.3.37"
-  resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.37.tgz#d48d2f38bc153535be3d91d2d67e092cd468782a"
-  integrity sha512-HnHFGhSNGd7FR2Ji2SOXbCRbBwr9Nul0l3Hr02kklB9GNAM0avnR9VyPIC7vlBBdaZROnsUxYnW0OkpQZI/GTQ==
+"@uirouter/core@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-6.0.1.tgz#93b02a5d178a7ab7313f34b7b3f019a000d23396"
+  integrity sha512-mHCutiHtDDRKYmrJ92XPKDoSb2bgqaDyUpHdF4hUE+riwgkCvGdBjL8u+VDTcV3slBAk6B0LBIOIajjWkkObbQ==
+
+"@uirouter/publish-scripts@^2.3.29":
+  version "2.3.29"
+  resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.29.tgz#ff20c5c2ceb7476dfdb2d3885cd10cf9435c3e31"
+  integrity sha512-I6nzISpasB8rtl6WxIvmRUrAXrN2GukFlkp70+i9Av/m/fbUS9J37YSwb+qlIYqxigVwMTusFfYdWJqEQ6w6KA==
   dependencies:
-    "@types/resolve" "0.0.8"
-    check-peer-dependencies "1.0.4"
     conventional-changelog "^3.1.10"
     conventional-changelog-ui-router-core "^1.4.2"
     find-parent-dir "^0.3.0"
@@ -170,7 +178,6 @@
     npm-run-all "^4.1.5"
     open "^6.4.0"
     readline-sync "^1.4.10"
-    resolve "^1.12.0"
     shelljs "^0.8.3"
     shx "^0.3.1"
     tmp "^0.1.0"
@@ -182,6 +189,11 @@
     ui-router-typedoc-themes "1.0.2"
     yalc "^1.0.0-pre.34"
     yargs "^14.0.0"
+
+"@uirouter/rx@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@uirouter/rx/-/rx-0.6.0.tgz#aeb616460d7c45f459504f66a8cea81c088dec61"
+  integrity sha512-+29mPy9qMOu6DveemTm8SEV5ueF5RPe5UgXST+gWg+qitExsmbaNpaSq6lL+3UJdDw+mdonGIBHt31cHD5/aEQ==
 
 JSONStream@^1.0.4:
   version "1.3.2"
@@ -922,15 +934,6 @@ chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1, chalk@^2.4
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
-
-check-peer-dependencies@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/check-peer-dependencies/-/check-peer-dependencies-1.0.4.tgz#822e88e5c73ecdf4144748603c808ca02612cece"
-  integrity sha512-oNRaEINoFbSQjbJdIqF252XRuW2yUD+VOKN3+snd86Uf8cDhlYTZ1DPN4PY5ieVvaub2nWtGnF/wOR0os8c1/w==
-  dependencies:
-    semver "^6.3.0"
-    shelljs "^0.8.3"
-    yargs "^14.2.0"
 
 "chokidar@>=2.0.0 <4.0.0", chokidar@^3.0.0:
   version "3.0.2"
@@ -5079,7 +5082,7 @@ resolve@^1.1.6, resolve@^1.11.0, resolve@^1.3.2:
   dependencies:
     path-parse "^1.0.6"
 
-resolve@^1.10.0, resolve@^1.11.1, resolve@^1.12.0:
+resolve@^1.10.0, resolve@^1.11.1:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.12.0.tgz#3fc644a35c84a48554609ff26ec52b66fa577df6"
   integrity sha512-B/dOmuoAik5bKcD6s6nXDCjzUKnaDvdkRyAk6rsmsKLipWj4797iothd7jmmUhWTfinVMU+wc56rYKsit2Qy4w==
@@ -6648,18 +6651,10 @@ yargs-parser@^11.1.1:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
-yargs-parser@^13.0.0:
+yargs-parser@^13.0.0, yargs-parser@^13.1.1:
   version "13.1.1"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-13.1.1.tgz#d26058532aa06d365fe091f6a1fc06b2f7e5eca0"
   integrity sha512-oVAVsHz6uFrg3XQheFII8ESO2ssAf9luWuAd6Wexsu4F3OtIW0o8IribPXYrD4WC24LWtPrJlGy87y5udK+dxQ==
-  dependencies:
-    camelcase "^5.0.0"
-    decamelize "^1.2.0"
-
-yargs-parser@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-15.0.0.tgz#cdd7a97490ec836195f59f3f4dbe5ea9e8f75f08"
-  integrity sha512-xLTUnCMc4JhxrPEPUYD5IBR1mWCK/aT6+RJ/K29JY2y1vD+FhtgKK0AXRWvI262q3QSffAQuTouFIKUuHX89wQ==
   dependencies:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
@@ -6727,23 +6722,6 @@ yargs@^14.0.0:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^13.1.1"
-
-yargs@^14.2.0:
-  version "14.2.0"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-14.2.0.tgz#f116a9242c4ed8668790b40759b4906c276e76c3"
-  integrity sha512-/is78VKbKs70bVZH7w4YaZea6xcJWOAwkhbR0CFuZBmYtfTYF0xjGJF43AYd8g2Uii1yJwmS5GR2vBmrc32sbg==
-  dependencies:
-    cliui "^5.0.0"
-    decamelize "^1.2.0"
-    find-up "^3.0.0"
-    get-caller-file "^2.0.1"
-    require-directory "^2.1.1"
-    require-main-filename "^2.0.0"
-    set-blocking "^2.0.0"
-    string-width "^3.0.0"
-    which-module "^2.0.0"
-    y18n "^4.0.0"
-    yargs-parser "^15.0.0"
 
 yargs@^7.1.0:
   version "7.1.0"
