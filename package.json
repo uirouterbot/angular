@@ -61,15 +61,15 @@
     "@uirouter/rx": "^0.6.0"
   },
   "devDependencies": {
-    "@angular/animations": "^6.1.2",
-    "@angular/common": "^5.0.0",
-    "@angular/compiler": "^5.0.0",
-    "@angular/compiler-cli": "^5.0.0",
-    "@angular/core": "^5.0.0",
-    "@angular/platform-browser": "^5.0.0",
-    "@angular/platform-browser-dynamic": "^5.0.0",
-    "@angular/platform-server": "^5.0.0",
-    "@angular/router": "^5.0.0",
+    "@angular/animations": "^8.2.5",
+    "@angular/common": "^8.2.5",
+    "@angular/compiler": "^8.2.5",
+    "@angular/compiler-cli": "^8.2.5",
+    "@angular/core": "^8.2.5",
+    "@angular/platform-browser": "^8.2.5",
+    "@angular/platform-browser-dynamic": "^8.2.5",
+    "@angular/platform-server": "^8.2.5",
+    "@angular/router": "^8.2.5",
     "@types/jquery": "^3.3.29",
     "@uirouter/publish-scripts": "^2.3.37",
     "husky": "^3.0.0",
@@ -89,15 +89,15 @@
     "rollup-plugin-node-resolve": "^5.0.2",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-uglify": "^6.0.0",
-    "rxjs": "^6.3.2",
+    "rxjs": "^6.5.3",
     "rxjs-compat": "^6.3.2",
     "ts-loader": "^3.5.0",
     "tslib": "^1.9.3",
     "tslint": "^5.11.0",
-    "typescript": "^3.2.4",
+    "typescript": "~3.5.3",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^3.1.4",
-    "zone.js": "^0.10.2"
+    "zone.js": "~0.9.1"
   },
   "husky": {
     "hooks": {
