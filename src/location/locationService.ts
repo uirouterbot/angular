@@ -1,5 +1,3 @@
-/** @module ng2 */
-/** */
 import { BaseLocationServices, parseUrl, UIRouter } from '@uirouter/core';
 import { LocationStrategy } from '@angular/common';
 
@@ -8,7 +6,7 @@ export class Ng2LocationServices extends BaseLocationServices {
   constructor(router: UIRouter, private _locationStrategy: LocationStrategy, isBrowser: boolean) {
     super(router, isBrowser);
 
-    this._locationStrategy.onPopState(evt => {
+    this._locationStrategy.onPopState((evt) => {
       if (evt.type !== 'hashchange') {
         this._listener(evt);
       }
@@ -21,12 +19,21 @@ export class Ng2LocationServices extends BaseLocationServices {
 
   _set(state: any, title: string, url: string, replace: boolean): any {
     const { path, search, hash } = parseUrl(url);
-    const urlWithHash = path + (hash ? '#' + hash : '');
+
+    const hashWithPrefix = hash ? '#' + hash : '';
+    let urlPath = path;
+    let urlParams = search;
+
+    if (search) {
+      urlParams += hashWithPrefix;
+    } else {
+      urlPath += hashWithPrefix;
+    }
 
     if (replace) {
-      this._locationStrategy.replaceState(state, title, urlWithHash, search);
+      this._locationStrategy.replaceState(state, title, urlPath, urlParams);
     } else {
-      this._locationStrategy.pushState(state, title, urlWithHash, search);
+      this._locationStrategy.pushState(state, title, urlPath, urlParams);
     }
   }
 

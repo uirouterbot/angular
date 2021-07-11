@@ -2,13 +2,15 @@
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "@uirouter/angular",
   "description": "State-based routing for Angular",
-  "version": "6.0.1",
+  "version": "8.0.1",
   "scripts": {
     "clean": "shx rm -rf lib lib-esm _bundles _doc dist",
     "compile": "npm run clean && ngc",
     "build": "ng-packagr -p package.json",
     "release": "release --deps @uirouter/core @uirouter/rx",
+    "check-peer-dependencies": "check-peer-dependencies",
     "test": "jest --rootDir test",
+    "test:watch": "jest --rootDir test --watchAll",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --rootDir test --runInBand",
     "test:downstream": "test_downstream_projects",
     "docs": "generate_docs",
@@ -42,41 +44,39 @@
   "license": "MIT",
   "distDir": "dist",
   "peerDependencies": {
-    "@angular/common": "^8.0.0 || ^9.0.0 || ^9.0.0-next",
-    "@angular/core": "^8.0.0 || ^9.0.0 || ^9.0.0-next",
-    "@uirouter/core": "^6.0.1",
+    "@angular/common": "^10.0.0 || ^11.0.0",
+    "@angular/core": "^10.0.0 || ^11.0.0",
+    "@uirouter/core": "^6.0.7",
     "@uirouter/rx": "^0.6.0"
   },
   "devDependencies": {
-    "@angular/common": "^8.2.5",
-    "@angular/compiler": "^8.2.14",
-    "@angular/compiler-cli": "^8.2.5",
-    "@angular/core": "^8.2.14",
-    "@angular/platform-browser": "^8.2.5",
-    "@angular/platform-browser-dynamic": "^8.2.5",
-    "@types/jest": "^25.1.4",
+    "@angular/animations": "^10.0.0",
+    "@angular/common": "^10.0.0",
+    "@angular/compiler": "^10.0.0",
+    "@angular/compiler-cli": "^10.0.0",
+    "@angular/core": "^10.0.0",
+    "@angular/platform-browser": "^10.0.0",
+    "@angular/platform-browser-dynamic": "^10.0.0",
+    "@types/jest": "^26.0.4",
     "@types/jquery": "^3.3.33",
-    "@uirouter/core": "^6.0.1",
-    "@uirouter/publish-scripts": "^2.3.45",
+    "@uirouter/core": "^6.0.7",
+    "@uirouter/publish-scripts": "2.5.5",
     "@uirouter/rx": "^0.6.0",
-    "husky": "^4.2.3",
-    "jest": "^25.1.0",
-    "jest-preset-angular": "^8.1.2",
-    "ng-packagr": "=5.5.1",
-    "prettier": "^1.18.2",
-    "pretty-quick": "^2.0.1",
-    "rollup": "^2.0.6",
-    "rollup-plugin-commonjs": "^10.0.0",
-    "rollup-plugin-node-resolve": "^5.0.2",
-    "rollup-plugin-sourcemaps": "^0.5.0",
-    "rollup-plugin-uglify": "^6.0.4",
+    "bufferutil": "4.0.3",
+    "canvas": "2.7.0",
+    "husky": "^5.1.2",
+    "jest": "26.6.3",
+    "jest-preset-angular": "8.4.0",
+    "ng-packagr": "^10.0.0",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^3.1.0",
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.4",
-    "ts-loader": "^6.2.1",
-    "tslib": "^1.9.3",
+    "ts-node": "9.1.1",
     "tslint": "^6.1.0",
-    "typescript": "~3.5.3",
-    "zone.js": "~0.10.2"
+    "typescript": "~4.0.0",
+    "utf-8-validate": "5.0.4",
+    "zone.js": "0.10.3"
   },
   "ngPackage": {
     "lib": {
@@ -93,5 +93,46 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "docgen": {
+    "publishDir": "_ng2_docs",
+    "navigation": {
+      "": [
+        "UIRouter"
+      ],
+      "Services": [
+        "StateService",
+        "StateRegistry",
+        "TransitionService",
+        "UrlService",
+        "UrlConfig",
+        "UrlRules"
+      ],
+      "Interfaces": [
+        "Ng2StateDeclaration",
+        "UiOnParamsChanged",
+        "UiOnExit"
+      ],
+      "Components": [
+        "UIView",
+        "UISref",
+        "UISrefActive"
+      ],
+      "Other": [
+        "Transition",
+        "Trace"
+      ]
+    },
+    "include": [
+      {
+        "pkg": "@uirouter/core",
+        "repo": "https://github.com/ui-router/core",
+        "branch": "master"
+      },
+      {
+        "pkg": "@uirouter/rx",
+        "repo": "https://github.com/ui-router/rx"
+      }
+    ]
   }
 }

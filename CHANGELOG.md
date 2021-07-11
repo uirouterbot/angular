@@ -1,3 +1,93 @@
+## 8.0.1 (2021-03-02)
+[Compare `@uirouter/angular` versions 8.0.0 and 8.0.1](https://github.com/ui-router/angular/compare/8.0.0...8.0.1)
+
+### Bug Fixes
+
+* **location:** do not add hash to URL twice ([#847](https://github.com/ui-router/angular/issues/847)) ([3794b25](https://github.com/ui-router/angular/commit/3794b25))
+
+# 8.0.0 (2020-12-21)
+[Compare `@uirouter/angular` versions 7.0.0 and 8.0.0](https://github.com/ui-router/angular/compare/7.0.0...8.0.0)
+
+### Features
+
+* support Angular 11 ([#885](https://github.com/ui-router/angular/issues/885)) ([d793e57](https://github.com/ui-router/angular/commit/d793e57))
+
+
+---
+
+
+### Updated `@uirouter/core` from 6.0.5 to 6.0.7
+
+
+Changelog for `@uirouter/core`:
+
+
+[Compare `@uirouter/core` versions 6.0.5 and 6.0.7](https://github.com/ui-router/core/compare/6.0.5...6.0.7)
+
+### Bug Fixes
+
+* **array:** Fix decoding of array-type query parameters ([44ebfae](https://github.com/ui-router/core/commit/44ebfae))
+* **params:** Bi-directionally en/decode path and search params. ([#618](https://github.com/ui-router/core/issues/618)) ([89e99cd](https://github.com/ui-router/core/commit/89e99cd))
+
+
+# 7.0.0 (2020-07-15)
+[Compare `@uirouter/angular` versions 6.0.3 and 7.0.0](https://github.com/ui-router/angular/compare/6.0.3...7.0.0)
+
+### Features
+
+* Support Angular 9-10 ([56bd176](https://github.com/ui-router/angular/commit/56bd176))
+
+
+### BREAKING CHANGES
+
+- Drop support for Angular v8, add support for Angular v10
+
+
+
+### Updated `@uirouter/core` from 6.0.1 to 6.0.5
+
+
+Changelog for `@uirouter/core`:
+
+
+[Compare `@uirouter/core` versions 6.0.1 and 6.0.5](https://github.com/ui-router/core/compare/6.0.1...6.0.5)
+
+### Bug Fixes
+
+* **hof:** Rewrite curry from scratch ([fc324c6](https://github.com/ui-router/core/commit/fc324c6)), closes [#350](https://github.com/ui-router/core/issues/350)
+* **IE9:** Add safeConsole so IE9 doesn't break ([9c8579d](https://github.com/ui-router/core/commit/9c8579d))
+* **safeConsole:** check if document is defined to avoid issues in node environments ([da29d88](https://github.com/ui-router/core/commit/da29d88))
+* **TargetState:** make isDef check more thorough ([e657cfe](https://github.com/ui-router/core/commit/e657cfe))
+
+
+### Features
+
+* **stateService:** add transition option 'supercede' so transition can be ignored if one is pending ([6e5a56f](https://github.com/ui-router/core/commit/6e5a56f))
+* **urlRuleFactory:** Add support for StateDeclarations in UrlRuleFactory.fromState() ([539d33a](https://github.com/ui-router/core/commit/539d33a))
+
+## 6.0.3 (2020-07-06)
+[Compare `@uirouter/angular` versions 6.0.2 and 6.0.3](https://github.com/ui-router/angular/compare/6.0.2...6.0.3)
+
+### Bug Fixes
+
+* **LocationServices:** Apply the hash correctly when a query string is present ([0192877](https://github.com/ui-router/angular/commit/0192877)), closes [#747](https://github.com/ui-router/angular/issues/747)
+* **tokens:** Export injection tokens ([#810](https://github.com/ui-router/angular/issues/810)) ([b9c338d](https://github.com/ui-router/angular/commit/b9c338d)), closes [#805](https://github.com/ui-router/angular/issues/805)
+* **uiSref:** Render empty 'href' for states that have no urls ([5020c79](https://github.com/ui-router/angular/commit/5020c79)), closes [#721](https://github.com/ui-router/angular/issues/721)
+* **uiSrefActive:** Fix nested UISrefActive where UISref components are added/removed dynamically ([#811](https://github.com/ui-router/angular/issues/811)) ([8d35dc1](https://github.com/ui-router/angular/commit/8d35dc1)), closes [#760](https://github.com/ui-router/angular/issues/760)
+
+## 6.0.2 (2020-06-06)
+[Compare `@uirouter/angular` versions 6.0.1 and 6.0.2](https://github.com/ui-router/angular/compare/6.0.1...6.0.2)
+
+### Bug Fixes
+
+* **ci:** Set git username ([b209cd8](https://github.com/ui-router/angular/commit/b209cd8))
+
+
+### Features
+
+* create OnUiParamsChanged, OnUiExit interfaces  ([#800](https://github.com/ui-router/angular/issues/800)) ([ea4574d](https://github.com/ui-router/angular/commit/ea4574d)), closes [#788](https://github.com/ui-router/angular/issues/788)
+* **update_dependencies:** Add a repository_dispatch trigger ([d7a9777](https://github.com/ui-router/angular/commit/d7a9777))
+
 ## 6.0.1 (2019-11-24)
 [Compare `@uirouter/angular` versions 6.0.0 and 6.0.1](https://github.com/ui-router/angular/compare/6.0.0...6.0.1)
 
